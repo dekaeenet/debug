@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Design Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f4f4f4, #ddd);
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 25px 0;
+            font-size: 22px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        #portfolio h2 {
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        box-shadow 0.4s ease-in-out, 
+                        filter 0.4s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .gallery img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+        .promotion-text {
+            font-size: 18px;
+            margin: 25px 0;
+            line-height: 1.6;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .service-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 280px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        box-shadow 0.4s ease-in-out;
+        }
+        .service-item i {
+            font-size: 50px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .service-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .contact-btn {
+            background: #25d366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            margin: 20px 0;
+            transition: background 0.4s ease-in-out, 
+                        transform 0.3s ease-in-out, 
+                        box-shadow 0.3s ease-in-out;
+        }
+        .contact-btn:hover {
+            background: #1e9e4a;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Pastikan semua ikon sejajar */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    font-size: 32px;
+    color: #333;
+    transition: color 0.3s ease-in-out, 
+                transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center; /* Pastikan ikon sejajar */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #555;
+    transform: scale(1.1);
+}
+
+/* Perbaikan khusus untuk ikon TikTok */
+.social-icons a[href*="tiktok"] i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Mencegah ikon menjadi lebih tinggi dari yang lain */
+    vertical-align: middle; /* Memastikan ikon sejajar */
+    font-size: 32px; /* Sesuaikan dengan ikon lainnya */
+}
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+
+        /* Video Section Styles */
+        .video-section {
+            margin: 40px 0;
+            padding: 30px 0;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery img {
+                max-height: none;
+            }
+            .video-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome My Design Portfolio Letbott</h1>
+    </header>
+
+    <div class="container">
+        <section id="portfolio">
+            <h2>Contoh Logo</h2>
+            <div class="gallery">
+                <img src="design1.jpg" alt="Design 1">
+                <img src="design2.jpg" alt="Design 2">
+                <img src="design3.jpg" alt="Design 3">
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <h2>Contoh Animasi Logo</h2>
+                <div class="video-container">
+                    <video controls poster="video-thumbnail.jpg">
+                        <source src="design-process.mp4" type="video/mp4">
+                        <source src="design-process.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <p class="promotion-text">
+                Desain Profesional & Eksklusif
+Pengerjaan Cepat & Revisi Fleksibel
+Harga Terjangkau, Kualitas Terbaik!
+
+Buat brand-mu lebih berkesan dengan desain kreatif dari kami!
+Dari logo, banner, hingga sosial media, semua bisa kami kerjakan!
+
+Hubungi kami sekarang dan wujudkan desain impianmu! 
+
+
+            </p>
+            <a href="https://api.whatsapp.com/send/?phone=%2B6283833795950&text=Kak+Mau+Order+Logo+Lettbot&type=phone_number&app_absent=0"" class="contact-btn">
+                <i class="fab fa-whatsapp"></i> Contact Me
+            </a>
+        </section>
+
+        <section class="services">
+            <div style="width: 100%; text-align: center;">
+                <p style="font-size: 22px; font-weight: bold; margin-bottom: 10px;">Layanan</p>
+            </div>
+
+            <div class="service-item">
+    <i class="fas fa-pen-nib"></i>
+    <h3>Jasa Desain Logo</h3>
+    <p>Wujudkan identitas brand Anda dengan logo profesional dan unik.</p>
+</div>
+            <div class="service-item">
+    <i class="fas fa-film"></i>
+    <h3>Animasi Logo</h3>
+    <p>Hidupkan logo Anda dengan animasi yang kreatif dan memukau!</p>
+</div>
+            <div class="service-item">
+    <i class="fas fa-tshirt"></i>
+    <h3>Desain Baju</h3>
+    <p>Buat desain baju unik dan stylish sesuai gaya Anda!</p>
+</div>
+        </section>
+
+        <div class="social-icons">
+    <a href="https://www.instagram.com/lettbot_graph" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:lettbot415@gmail.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=%2B6283833795950&text=Kak+Mau+Order+Logo+Lettbot&type=phone_number&app_absent=0">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.tiktok.com/@lett.bot" target="_blank">
+        <i class="fab fa-tiktok"></i>
+    </a>
+</div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Lettbot. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
